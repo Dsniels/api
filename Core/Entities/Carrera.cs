@@ -10,8 +10,8 @@ namespace Core.Entities
     {
 
         public string Nombre { get; set; }
-        public List<Materia> Materias { get; set; }
+        public ICollection<Materia> Materias { get; set; }
 
-        public List<Profesor> Profesores { get; set; }
+        public ICollection<Profesor> Profesores { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace Core.Entities
 {
     public class Base
     {
-        public required int ID { get; set; }
+        public  int Id { get; set; }
     }
 }

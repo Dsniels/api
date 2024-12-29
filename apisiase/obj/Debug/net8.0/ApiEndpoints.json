@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Materia",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "Create",
+    "RelativePath": "api/Materia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "materia",
+        "Type": "Core.Entities.Materia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

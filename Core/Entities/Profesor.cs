@@ -9,8 +9,6 @@ namespace Core.Entities
     public class Profesor : Base
     {
         public string Nombre { get; set; }
-        public ICollection<Materia> Materias { get; set; }
-        public ICollection<Carrera> Carreras { get; set; }
 
     }
 }

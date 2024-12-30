@@ -9,7 +9,7 @@ namespace Core.Entities
     public class Materia : Base
     {
         public string Nombre { get; set; }
-        public ICollection<Carrera> Carreras { get; set; }
-        public ICollection<Profesor> Profesores { get; set; }
+        public  Profesor Profesor { get; set; }
+        public  Carrera Carrera { get; set; } 
     }
 }

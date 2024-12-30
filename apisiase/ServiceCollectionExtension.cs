@@ -13,6 +13,7 @@ namespace apisiase
             System.Console.WriteLine(connectionString);
             services.AddDbContext<SiaseDbContext>(opt => opt.UseSqlServer(connectionString));
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IMateriasRepository, MateriasRepository>();
             //services.AddScoped(typeof(IGenericSecurityRepository<>), typeof(GenericSecurityRepository<>));
         }
     }

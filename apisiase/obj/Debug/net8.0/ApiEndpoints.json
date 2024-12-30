@@ -1,8 +1,40 @@
 [
   {
-    "ContainingType": "apisiase.Controllers.MateriaController",
-    "Method": "GetAll",
-    "RelativePath": "api/Materia",
+    "ContainingType": "apisiase.Controllers.CarreraController",
+    "Method": "create",
+    "RelativePath": "api/Carrera/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carrera",
+        "Type": "Core.Entities.Carrera",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.CarreraController",
+    "Method": "deleteByID",
+    "RelativePath": "api/Carrera/DeleteByID/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.CarreraController",
+    "Method": "getAll",
+    "RelativePath": "api/Carrera/GetAll",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,17 +44,154 @@
   {
     "ContainingType": "apisiase.Controllers.MateriaController",
     "Method": "Create",
-    "RelativePath": "api/Materia",
+    "RelativePath": "api/Materia/Add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "materia",
-        "Type": "Core.Entities.Materia",
+        "Type": "apisiase.Dto.MateriaDto",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "deleteByID",
+    "RelativePath": "api/Materia/DeleteByID/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Materia/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "GetByCarrera",
+    "RelativePath": "api/Materia/GetByCarrera/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "GetByID",
+    "RelativePath": "api/Materia/GetByID/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "GetByProfesor",
+    "RelativePath": "api/Materia/GetByProfesor/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "GetByProfesorAndCarrera",
+    "RelativePath": "api/Materia/GetByProfesorAndCarrera",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profesorId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "carreraId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.ProfesorController",
+    "Method": "create",
+    "RelativePath": "api/Profesor/Add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profesor",
+        "Type": "Core.Entities.Profesor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.ProfesorController",
+    "Method": "deleteByID",
+    "RelativePath": "api/Profesor/DeleteByID/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.ProfesorController",
+    "Method": "getAll",
+    "RelativePath": "api/Profesor/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

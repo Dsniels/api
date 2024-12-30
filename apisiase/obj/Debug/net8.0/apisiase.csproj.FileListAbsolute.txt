@@ -1,11 +1,3 @@
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.csproj.AssemblyReference.cache
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.GeneratedMSBuildEditorConfig.editorconfig
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.AssemblyInfoInputs.cache
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.AssemblyInfo.cs
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.csproj.CoreCompileInputs.cache
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.MvcApplicationPartsAssemblyInfo.cs
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.MvcApplicationPartsAssemblyInfo.cache
-D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.sourcelink.json
 D:\Repositorios\dotnet\api\apisiase\bin\Debug\net8.0\appsettings.Development.json
 D:\Repositorios\dotnet\api\apisiase\bin\Debug\net8.0\appsettings.json
 D:\Repositorios\dotnet\api\apisiase\bin\Debug\net8.0\apisiase.exe
@@ -127,6 +119,14 @@ D:\Repositorios\dotnet\api\apisiase\bin\Debug\net8.0\BusinessLogic.dll
 D:\Repositorios\dotnet\api\apisiase\bin\Debug\net8.0\Core.dll
 D:\Repositorios\dotnet\api\apisiase\bin\Debug\net8.0\BusinessLogic.pdb
 D:\Repositorios\dotnet\api\apisiase\bin\Debug\net8.0\Core.pdb
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.csproj.AssemblyReference.cache
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.AssemblyInfoInputs.cache
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.AssemblyInfo.cs
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.csproj.CoreCompileInputs.cache
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.MvcApplicationPartsAssemblyInfo.cs
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.MvcApplicationPartsAssemblyInfo.cache
+D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\apisiase.sourcelink.json
 D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\staticwebassets.build.json
 D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\staticwebassets.development.json
 D:\Repositorios\dotnet\api\apisiase\obj\Debug\net8.0\staticwebassets\msbuild.apisiase.Microsoft.AspNetCore.StaticWebAssets.props

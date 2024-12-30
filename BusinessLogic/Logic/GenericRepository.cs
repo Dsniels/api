@@ -33,9 +33,10 @@ namespace BusinessLogic.Logic
             
         }
 
-        public void DeleteEntity(T entity)
+        public async Task<int> DeleteEntity(T entity)
         {
             _context.Set<T>().Remove(entity);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<IReadOnlyCollection<T>> getAllAsync()

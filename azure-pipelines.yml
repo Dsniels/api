@@ -11,7 +11,7 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
   repoName: "fm-api"
-  acr: "DevToolsLyon"
+  acr: "DR-DevToolsLyon"
 
 stages:
 - stage: Build

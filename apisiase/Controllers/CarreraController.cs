@@ -1,8 +1,7 @@
-﻿using Core.Entities;
+﻿using apisiase.Dto;
+using Core.Entities;
 using Core.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace apisiase.Controllers
 {
@@ -20,7 +19,7 @@ namespace apisiase.Controllers
         [HttpPost("Add")]
         public async Task<ActionResult> create(Carrera carrera)
         {
-
+            
             var result = await  _repository.add(carrera);
 
             if(result == 0)
@@ -31,6 +30,15 @@ namespace apisiase.Controllers
 
         }
 
+        [HttpGet("GetNew")]
+        public async Task<ActionResult> getNew() {
+
+            var ds = new CarreraDto();
+
+            return Ok(ds);
+            
+        }
+
         [HttpGet("GetAll")]
         public async Task<ActionResult> getAll()
         {
@@ -38,6 +46,21 @@ namespace apisiase.Controllers
 
             return Ok(result);
         }
+
+
+
+        [HttpPut("Update/{id}")]
+        public async Task<ActionResult> update(int id, Carrera carrera) {
+            carrera.Id = id;
+            var result = await _repository.update(carrera);
+            if (result == 0) {
+                throw new Exception("Error al actualizar");
+            }
+
+            return Ok(carrera);
+
+        }
+
 
         [HttpDelete("DeleteByID/{id}")]
         public async Task<ActionResult> deleteByID(int id)

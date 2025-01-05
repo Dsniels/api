@@ -1,6 +1,5 @@
 ﻿using Core.Entities;
 using Core.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace apisiase.Controllers
@@ -27,6 +26,29 @@ namespace apisiase.Controllers
 
         }
 
+        [HttpPut("Update/{id}")]
+        public async Task<ActionResult> update(int id, Profesor profesor)
+        {
+            profesor.Id = id;
+
+            var result = await _repository.update(profesor);
+            if(result == 0)
+            {
+                throw new Exception("Error al actualizar");
+            }
+
+            return Ok(profesor);
+        }
+
+
+
+        [HttpGet("GetNew")]
+        public ActionResult getNew()
+        {
+            var ds = new Profesor();
+
+            return Ok(ds);
+        }
         [HttpGet("GetAll")]
         public async Task<ActionResult> getAll()
         {

@@ -121,6 +121,30 @@ namespace apisiase.Controllers
 
         }
 
+        [HttpGet("GetNew")]
+        public ActionResult getNew()
+        {
+            var ds = new MateriaDto();
+
+            return Ok(ds);
+        }
+
+
+        [HttpPut("Update/{id}")]
+        public async Task<ActionResult> update(int id, Materia materia)
+        {
+            materia.Id = id;
+            var result = await _repository.update(materia);
+            
+            if(result == 0)
+            {
+                throw new Exception("Error al actualizar");
+            }
+
+            return Ok(materia);
+        }
+
+
         [HttpPost("Add")]
         public async Task<ActionResult> Create(MateriaDto materia)
         {

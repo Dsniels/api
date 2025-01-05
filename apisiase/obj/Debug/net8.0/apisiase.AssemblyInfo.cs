@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("apisiase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89ff9c61cac638d9f18bf341323bb1789938464e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ffb308eff87e063ae6ab75b1a46bf207135d3d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("apisiase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("apisiase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

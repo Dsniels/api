@@ -1,0 +1,123 @@
+apiVersion : v1
+kind : PersistentVolumeClaim
+metadata :
+  name : sql-data
+spec: 
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+  storageClassName : managed-csi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-sql
+  labels:
+    type: db
+    service: api-siase-v2
+spec:
+
+  selector:
+    matchLabels:
+      type: db
+      service: api-siase-v2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        type: db
+        service: api-siase-v2
+    spec: 
+      securityContext:
+        fsGroup: 10001     
+      containers:
+        - name: db
+          image: mcr.microsoft.com/mssql/server:2022-latest
+          ports:
+            - containerPort: 1433
+          resources:
+            requests:
+              memory: "1Gi"  
+              cpu: "250m"
+            limits:
+              memory: "2Gi" 
+              cpu: "500m"
+          env:
+            - name: ACCEPT_EULA
+              value: "Y"
+            - name: SA_PASSWORD
+              value: "Contraseñña1"
+            - name: MSSQL_PID
+              value: "Express"
+          volumeMounts:
+            - name : sql-data
+              mountPath: /var/opt/mssql
+      volumes:
+      - name : sql-data
+        persistentVolumeClaim:
+          claimName : sql-data
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-sql
+spec:
+  type: NodePort
+  ports:
+    - port: 1433
+      protocol: TCP
+      nodePort: 30001
+      targetPort: 1433
+  selector:
+    type: db
+    service: api-siase-v2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-siase
+  labels:
+    type: api
+    service: api-siase-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: api
+      service: api-siase-v2
+  template:
+    metadata:
+      labels:
+        type: api
+        service: api-siase-v2
+    spec:  
+      
+      containers:
+        - name: api
+          image: danielszr/apisiase
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-siase
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    type: api
+    service: api-siase-v2

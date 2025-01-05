@@ -42,6 +42,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "apisiase.Controllers.CarreraController",
+    "Method": "getNew",
+    "RelativePath": "api/Carrera/GetNew",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.CarreraController",
+    "Method": "update",
+    "RelativePath": "api/Carrera/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "carrera",
+        "Type": "Core.Entities.Carrera",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "apisiase.Controllers.MateriaController",
     "Method": "Create",
     "RelativePath": "api/Materia/Add",
@@ -80,7 +111,38 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "Profesor",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Carrera",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sort",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -153,6 +215,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "getNew",
+    "RelativePath": "api/Materia/GetNew",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.MateriaController",
+    "Method": "update",
+    "RelativePath": "api/Materia/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "materia",
+        "Type": "Core.Entities.Materia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "apisiase.Controllers.ProfesorController",
     "Method": "create",
     "RelativePath": "api/Profesor/Add",
@@ -192,6 +285,37 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.ProfesorController",
+    "Method": "getNew",
+    "RelativePath": "api/Profesor/GetNew",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apisiase.Controllers.ProfesorController",
+    "Method": "update",
+    "RelativePath": "api/Profesor/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "profesor",
+        "Type": "Core.Entities.Profesor",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

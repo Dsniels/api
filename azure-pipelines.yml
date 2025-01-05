@@ -10,6 +10,8 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  repoName: "fm-api"
+  acr: "DevToolsLyon"
 
 stages:
 - stage: Build
@@ -17,13 +19,28 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: ubuntu-latest
     steps:
     - task: Docker@2
       displayName: Build an image
       inputs:
         command: build
+        repository: $(repoName)
         dockerfile: '**/Dockerfile'
+        containerRegistry: $(acr)
+        tags: |
+          $(tag)
+
+- stage: Push
+  displayName: Push
+  jobs:
+  - job: Push
+    displayName: Push
+    steps:
+    - task: Docker@2
+      displayName: Push image
+      inputs:
+        command: push
+        repository: $(repoName)
+        containerRegistry: $(acr)
         tags: |
           $(tag)

@@ -1,6 +1,8 @@
-﻿using BusinessLogic.Persistence;
+﻿using BusinessLogic.Data;
+using BusinessLogic.Persistence;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,9 +31,20 @@ namespace BusinessLogic.Logic
         public void AddEntity(T entity)
         {
             _context.Set<T>().Add(entity);
-
-            
         }
+
+
+
+        public async Task<int> CountAsync(ISpecification<T> specification)
+        {
+            return await ApplySpecification(specification).CountAsync();
+        }
+
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.getQuery(_context.Set<T>().AsQueryable(), spec);
+        }
+
 
         public async Task<int> DeleteEntity(T entity)
         {
@@ -42,6 +55,11 @@ namespace BusinessLogic.Logic
         public async Task<IReadOnlyCollection<T>> getAllAsync()
         {
             return await _context.Set<T>().ToListAsync();   
+        }
+
+        public async Task<IReadOnlyCollection<T>> getAllWithSpec(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).ToListAsync();
         }
 
         public async Task<T> getByID(int id)

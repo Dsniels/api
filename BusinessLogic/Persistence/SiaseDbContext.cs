@@ -11,6 +11,7 @@ namespace BusinessLogic.Persistence
 {
     public class SiaseDbContext : DbContext
     {
+        
         public SiaseDbContext( DbContextOptions<SiaseDbContext> options ) : base(options) { }
 
         public DbSet<Materia> Materia { get; set; }

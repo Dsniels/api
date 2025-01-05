@@ -8,7 +8,7 @@ namespace Core.Entities
 {
     public class Profesor : Base
     {
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } = "";
 
     }
 }

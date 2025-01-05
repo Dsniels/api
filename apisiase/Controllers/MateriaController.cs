@@ -1,6 +1,7 @@
 ﻿using apisiase.Dto;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,38 +24,17 @@ namespace apisiase.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult> GetAll()
+        public async Task<ActionResult> GetAll([FromQuery] MateriaSpecificationParams materiaParams)
         {
+            var spec = new MateriaWithProfesorAndCarreraSpecification(materiaParams);
 
-            var records = await _materiasRepository.getMateriasAsync();
+            var records = await _repository.getAllWithSpec(spec);
 
 
             return Ok(records);
 
         }
 
-        [HttpGet("GetByProfesor/{id}")]
-        public async Task<ActionResult> GetByProfesor(int id)
-        {
-
-            var records = await _materiasRepository.getMateriasWhereProfesor(id);
-            if (records == null)
-            {
-                return NotFound();
-            }
-
-            var results = records.Select(m => new MateriaProfesorDto
-            {
-                Nombre = m.Nombre,
-                CarreraID = m.Carrera.Id,
-                Carrera = m.Carrera.Nombre,
-                Id = m.Id
-            }).ToList();
-
-            return Ok(results);
-
-
-        }
 
         [HttpDelete("DeleteByID/{id}")]
         public async Task<ActionResult> deleteByID(int id)
@@ -71,40 +51,6 @@ namespace apisiase.Controllers
         }
 
 
-        [HttpGet("GetByCarrera/{id}")]
-        public async Task<ActionResult> GetByCarrera(int id)
-        {
-
-            var records = await _materiasRepository.getMateriasWhereCarrera(id);
-            if (records == null)
-            {
-                return NotFound();
-            }
-
-            var results = records.Select(m => new MateriaCarreraDto
-            {
-                Nombre = m.Nombre,
-                ProfesorId = m.Profesor.Id,
-                Profesor = m.Profesor.Nombre,
-                Id = m.Id
-            }).ToList();
-
-            return Ok(results);
-
-        }
-        [HttpGet("GetByProfesorAndCarrera")]
-        public async Task<ActionResult> GetByProfesorAndCarrera([FromQuery] int profesorId, [FromQuery] int carreraId)
-        {
-            if (profesorId <= 0 || carreraId <= 0)
-                return BadRequest("");
-
-            var materias = await _materiasRepository.getMateriasWhereProfesorAndCarrera(profesorId, carreraId);
-
-            if (!materias.Any())
-                return NotFound("No se encontraron materias con los criterios especificados");
-
-            return Ok(materias);
-        }
         [HttpGet("GetByID/{id}")]
         public async Task<IActionResult> GetByID(int id)
         {
